@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+}
+
+.conteiner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  flex-wrap: wrap;
+}
+
+.conteiner .box {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 30px;
+  transition: 500ms;
+}
+
+.conteiner .box:hover {
+  transform: translateY(-20px);
+}
+
+.conteiner .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffbc00, #ff0058);
+}
+
+.conteiner .box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ffbc00, #ff0058);
+  filter: blur(30px);
+}
+
+.conteiner .box:nth-child(2)::before,
+.conteiner .box:nth-child(2)::after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.conteiner .box:nth-child(3)::before,
+.conteiner .box:nth-child(3)::after {
+  background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+
+.conteiner .box span {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: rgba(0 0 0 / 60%);
+  z-index: 2;
+}
+
+.conteiner .box span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255 255 255 / 10%);
+}
+
+.conteiner .box .content {
+  z-index: 10;
+  padding: 20px 40px;
+  position: relative;
+}
+
+.conteiner .box .content h2 {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.conteiner .box .content p {
+  font-size: 1.1em;
+  line-height: 1.4em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.conteiner .box .content a {
+  display: inline-block;
+  font-size: 1.4em;
+  color: #111;
+  background: #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
